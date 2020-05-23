@@ -9,5 +9,3 @@ draft: true
 ### test
 
 - abc
-- efg
-- hij
