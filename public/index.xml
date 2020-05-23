@@ -18,7 +18,7 @@
       
       <guid>/posts/first-post/</guid>
       <description>HUGO にした 
-インストール brew install hugo hugo version hugo new site ls cd ls git init # hello-friend というテーマを導入 git submodule add https://github.com/panr/hugo-theme-hello-friend.git themes/hello-friend # ここを参照 https://github.com/panr/hugo-theme-hello-friend#how-to-configure vim config.toml # 記事作成 hugo new posts/first-post.md vim content/posts/first-post.md # サーバー起動 hugo server -D open http://localhost:1313 デプロイ先は vercel 
+インストール # https://gohugo.io/getting-started/quick-start/ brew install hugo hugo version hugo new site ls cd ls git init # hello-friend というテーマを導入 git submodule add https://github.com/panr/hugo-theme-hello-friend.git themes/hello-friend # ここを参照 https://github.com/panr/hugo-theme-hello-friend#how-to-configure vim config.toml # 記事作成 hugo new posts/first-post.md vim content/posts/first-post.md # サーバー起動 hugo server -D open http://localhost:1313 デプロイ先は vercel 
 vercel の設定  Import Project から github のリポジトリを登録した。 設定は下記の様。FRAMEWORK PRESET に hugo があったが、 config.yaml を要求されて、とりあえず諦めた。   Hook を作成したら Copy する。  github の設定  Copy した URL を Payload URL に貼り付ける。  デプロイ hugo -D git add .</description>
     </item>
     

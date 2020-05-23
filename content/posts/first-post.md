@@ -12,6 +12,7 @@ tags: ["blog"]
 ### インストール
 
 ```bash
+# https://gohugo.io/getting-started/quick-start/
 brew install hugo
 hugo version
 hugo new site ls
