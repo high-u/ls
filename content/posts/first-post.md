@@ -1,10 +1,8 @@
 ---
 title: "ブログはじめる"
 date: 2020-05-23T15:07:43+09:00
-draft: false
 description: "ブログは static site generator の HUGO にした。デプロイ先は Versel。"
 tags: ["blog"]
-author: ""
 ---
 
 ## HUGO にした
