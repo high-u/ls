@@ -1,5 +1,5 @@
 baseurl = "/"
-languageCode = "ja"
+languageCode = "en-us"
 theme = "hello-friend"
 paginate = 5
 
@@ -18,7 +18,7 @@ paginate = 5
 
 [languages]
   [languages.en]
-    title = "Hello Friend"
+    title = "ls"
     subtitle = "A simple theme for Hugo"
     keywords = ""
     copyright = ""
@@ -35,7 +35,7 @@ paginate = 5
     # lastModDisplay = ""
 
     [languages.en.params.logo]
-      logoText = "hello friend"
+      logoText = "ls"
       logoHomeLink = "/"
     # or
     #
