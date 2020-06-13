@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>データベースをデプロイする :: ls — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="PostgreSQL Docker  https://hub.docker.com/_/postgres  docker run -d --rm --name pg -e POSTGRES_PASSWORD=password postgres:12.3 docker exec -it pg psql -U postgres Docker Compose version: &amp;#39;3.1&amp;#39; services: db: image: postgres:12.3 restart: always ports: - &amp;#34;5432:5432&amp;#34; environment: POSTGRES_PASSWORD: password PGDATA: /var/lib/postgresql/data/pgdata volumes: - pg-data:/var/lib/postgresql/data adminer: image: adminer restart: always ports: - 8080:8080 volumes: pg-data: docker-compose up -d open http://localhost:8080 # # データベースの種類: PostgreSQL # サーバ: db # ユーザ名: postgres # パスワード: password # データベース: # docker-compose down Kubernetes (with kind) "/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/deploy-databases/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="データベースをデプロイする"/>
+<meta name="twitter:description" content="最近使っている（遊んでいる）データベースのデプロイ方法のメモ"/>
+
+
+
+<meta property="og:title" content="データベースをデプロイする" />
+<meta property="og:description" content="最近使っている（遊んでいる）データベースのデプロイ方法のメモ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/deploy-databases/" />
+<meta property="article:published_time" content="2020-06-13T10:19:16+09:00" />
+<meta property="article:modified_time" content="2020-06-13T10:19:16+09:00" /><meta property="og:site_name" content="ls" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">ls</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="/posts/deploy-databases/">データベースをデプロイする</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-06-13
+        </span>
+
+        
+          
+        
+      
+
+      
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/database/">database</a>&nbsp;
+        
+          #<a href="/tags/docker/">docker</a>&nbsp;
+        
+          #<a href="/tags/kubernetes/">kubernetes</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <h2 id="postgresql">PostgreSQL</h2>
+<h3 id="docker">Docker</h3>
+<ul>
+<li><a href="https://hub.docker.com/_/postgres">https://hub.docker.com/_/postgres</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -d --rm --name pg -e POSTGRES_PASSWORD<span style="color:#f92672">=</span>password postgres:12.3
+
+docker exec -it pg psql -U postgres
+</code></pre></div><h3 id="docker-compose">Docker Compose</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">version</span>: <span style="color:#e6db74">&#39;3.1&#39;</span>
+<span style="color:#66d9ef">services</span>:
+  <span style="color:#66d9ef">db</span>:
+    <span style="color:#66d9ef">image</span>: postgres:<span style="color:#ae81ff">12.3</span>
+    <span style="color:#66d9ef">restart</span>: always
+    <span style="color:#66d9ef">ports</span>:
+      - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
+    <span style="color:#66d9ef">environment</span>:
+      <span style="color:#66d9ef">POSTGRES_PASSWORD</span>: password
+      <span style="color:#66d9ef">PGDATA</span>: /var/lib/postgresql/data/pgdata
+    <span style="color:#66d9ef">volumes</span>:
+      - pg-data:/var/lib/postgresql/data
+  <span style="color:#66d9ef">adminer</span>:
+    <span style="color:#66d9ef">image</span>: adminer
+    <span style="color:#66d9ef">restart</span>: always
+    <span style="color:#66d9ef">ports</span>:
+      - <span style="color:#ae81ff">8080</span>:<span style="color:#ae81ff">8080</span>
+<span style="color:#66d9ef">volumes</span>:
+  <span style="color:#66d9ef">pg-data</span>:
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up -d
+
+open http://localhost:8080
+#
+<span style="color:#75715e"># データベースの種類: PostgreSQL</span>
+<span style="color:#75715e"># サーバ: db</span>
+<span style="color:#75715e"># ユーザ名: postgres</span>
+<span style="color:#75715e"># パスワード: password</span>
+<span style="color:#75715e"># データベース:</span>
+#
+
+docker-compose down
+</code></pre></div><h3 id="kubernetes-with-kind">Kubernetes (with kind)</h3>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="/posts/first-post/">
+                  <span class="button__text">ブログはじめる</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+
+    
+      
+        
+
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">ls</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

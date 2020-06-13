@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>database on ls</title>
+    <link>/tags/database/</link>
+    <description>Recent content in database on ls</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Jun 2020 10:19:16 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>データベースをデプロイする</title>
+      <link>/posts/deploy-databases/</link>
+      <pubDate>Sat, 13 Jun 2020 10:19:16 +0900</pubDate>
+      
+      <guid>/posts/deploy-databases/</guid>
+      <description>PostgreSQL Docker  https://hub.docker.com/_/postgres  docker run -d --rm --name pg -e POSTGRES_PASSWORD=password postgres:12.3 docker exec -it pg psql -U postgres Docker Compose version: &amp;#39;3.1&amp;#39; services: db: image: postgres:12.3 restart: always ports: - &amp;#34;5432:5432&amp;#34; environment: POSTGRES_PASSWORD: password PGDATA: /var/lib/postgresql/data/pgdata volumes: - pg-data:/var/lib/postgresql/data adminer: image: adminer restart: always ports: - 8080:8080 volumes: pg-data: docker-compose up -d open http://localhost:8080 # # データベースの種類: PostgreSQL # サーバ: db # ユーザ名: postgres # パスワード: password # データベース: # docker-compose down Kubernetes (with kind) </description>
+    </item>
+    
+  </channel>
+</rss>
