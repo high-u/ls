@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on ls</title>
+    <link>/tags/javascript/</link>
+    <description>Recent content in javascript on ls</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Jul 2020 00:36:00 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>javascript のラインチャートライブラリをいくつく見てみた</title>
+      <link>/posts/linechart-libraries/</link>
+      <pubDate>Fri, 03 Jul 2020 00:36:00 +0900</pubDate>
+      
+      <guid>/posts/linechart-libraries/</guid>
+      <description>C3.js と Billboard.js  下記は Billboard.js を利用した。C3.js も可能。  &amp;lt;body&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;https://d3js.org/d3.v5.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/billboard.js/2.0.0-next.7/billboard.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/billboard.js/2.0.0-next.7/billboard.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;timeseries&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var chart = bb.generate({ data: { x: &amp;#39;x&amp;#39;, xFormat: &amp;#39;%Y-%m-%dT%H:%M:%S.%LZ&amp;#39;, // columns: [  // [  // &amp;#39;x&amp;#39;,  // &amp;#39;2013-01-01T00:00:00.000Z&amp;#39;,  // &amp;#39;2013-01-01T02:02:00.000Z&amp;#39;,  // &amp;#39;2013-01-01T04:04:00.000Z&amp;#39;,  // &amp;#39;2013-01-01T08:08:00.000Z&amp;#39;,  // &amp;#39;2013-01-01T16:16:00.000Z&amp;#39;  // ],  // [&amp;#39;data1&amp;#39;, 30, 200, 100, 400, 150],  // [&amp;#39;data2&amp;#39;, 130, 340, 200, 500, 250]  // ]  rows: [ [&amp;#34;x&amp;#34;, &amp;#34;data1&amp;#34;, &amp;#34;data2&amp;#34;], [&amp;#34;2013-01-01T00:00:00.</description>
+    </item>
+    
+  </channel>
+</rss>
