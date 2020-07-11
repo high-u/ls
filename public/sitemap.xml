@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/posts/calculate-polygon-with-js/</loc>
+    <lastmod>2020-07-11T10:34:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-07-11T10:34:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-07-11T10:34:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/chart/</loc>
+    <lastmod>2020-07-03T00:36:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/javascript/</loc>
+    <lastmod>2020-07-03T00:36:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/linechart-libraries/</loc>
+    <lastmod>2020-07-03T00:36:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-07-03T00:36:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/database/</loc>
     <lastmod>2020-06-13T10:19:16+09:00</lastmod>
   </url>
@@ -14,21 +49,6 @@
   
   <url>
     <loc>/tags/kubernetes/</loc>
-    <lastmod>2020-06-13T10:19:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-06-13T10:19:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2020-06-13T10:19:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-06-13T10:19:16+09:00</lastmod>
   </url>
   
