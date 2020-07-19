@@ -6,10 +6,19 @@
     <description>Recent content on ls</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Jun 2020 10:19:16 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2020 13:58:42 +0900</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nginx で reverse proxy。 proxy_pass にハマる。</title>
+      <link>/posts/nginx-subdomain-reverse-proxy/</link>
+      <pubDate>Sun, 19 Jul 2020 13:58:42 +0900</pubDate>
+      
+      <guid>/posts/nginx-subdomain-reverse-proxy/</guid>
+      <description>やりたいこと  サブドメインと同じホスト名を持つコンテナに中継するリバースプロキシを Docker コンテナで作る。 中継先は、同じ Docker Network 内とする。  当初は  Caddy でやろうと思ったのだが、自分の力では出来そうもなく断念。  Nginx で出来た cat &amp;lt;&amp;lt;EOF &amp;gt; spades.html &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;&amp;amp;spades;&amp;lt;/h1&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; EOF cat &amp;lt;&amp;lt;EOF &amp;gt; diams.html &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;&amp;amp;diams;&amp;lt;/h1&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; EOF cat &amp;lt;&amp;lt;EOF &amp;gt; nginx.conf events { worker_connections 1024; } http { server { listen 80; server_name &amp;#34;~^(?&amp;lt;subdomain&amp;gt;.+)\.localhost&amp;#34;; location / { resolver 127.0.0.11 valid=5s; proxy_pass http://\$subdomain/; proxy_redirect off; } } } EOF cat &amp;lt;&amp;lt;EOF &amp;gt; docker-compose.</description>
+    </item>
     
     <item>
       <title>データベースをデプロイする</title>

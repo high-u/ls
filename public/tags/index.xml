@@ -6,10 +6,37 @@
     <description>Recent content in Tags on ls</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Jun 2020 10:19:16 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2020 13:58:42 +0900</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Sun, 19 Jul 2020 13:58:42 +0900</pubDate>
+      
+      <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>/tags/nginx/</link>
+      <pubDate>Sun, 19 Jul 2020 13:58:42 +0900</pubDate>
+      
+      <guid>/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reverse proxy</title>
+      <link>/tags/reverse-proxy/</link>
+      <pubDate>Sun, 19 Jul 2020 13:58:42 +0900</pubDate>
+      
+      <guid>/tags/reverse-proxy/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>database</title>
@@ -17,15 +44,6 @@
       <pubDate>Sat, 13 Jun 2020 10:19:16 +0900</pubDate>
       
       <guid>/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>/tags/docker/</link>
-      <pubDate>Sat, 13 Jun 2020 10:19:16 +0900</pubDate>
-      
-      <guid>/tags/docker/</guid>
       <description></description>
     </item>
     

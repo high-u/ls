@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Nginx で reverse proxy。 proxy_pass にハマる。 :: ls — A simple theme for Hugo</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="やりたいこと  サブドメインと同じホスト名を持つコンテナに中継するリバースプロキシを Docker コンテナで作る。 中継先は、同じ Docker Network 内とする。  当初は  Caddy でやろうと思ったのだが、自分の力では出来そうもなく断念。  Nginx で出来た cat &amp;lt;&amp;lt;EOF &amp;gt; spades.html &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;&amp;amp;spades;&amp;lt;/h1&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; EOF cat &amp;lt;&amp;lt;EOF &amp;gt; diams.html &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;&amp;amp;diams;&amp;lt;/h1&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; EOF cat &amp;lt;&amp;lt;EOF &amp;gt; nginx.conf events { worker_connections 1024; } http { server { listen 80; server_name &amp;#34;~^(?&amp;lt;subdomain&amp;gt;.&#43;)\.localhost&amp;#34;; location / { resolver 127.0.0.11 valid=5s; proxy_pass http://\$subdomain/; proxy_redirect off; } } } EOF cat &amp;lt;&amp;lt;EOF &amp;gt; docker-compose."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/nginx-subdomain-reverse-proxy/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Nginx で reverse proxy。 proxy_pass にハマる。"/>
+<meta name="twitter:description" content="Nginx で、同じ Docker Network 内の、サブドメインと同一のホスト名を持つコンテナに中継する Reverse Proxy を作る。"/>
+
+
+
+<meta property="og:title" content="Nginx で reverse proxy。 proxy_pass にハマる。" />
+<meta property="og:description" content="Nginx で、同じ Docker Network 内の、サブドメインと同一のホスト名を持つコンテナに中継する Reverse Proxy を作る。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/nginx-subdomain-reverse-proxy/" />
+<meta property="article:published_time" content="2020-07-19T13:58:42+09:00" />
+<meta property="article:modified_time" content="2020-07-19T13:58:42+09:00" /><meta property="og:site_name" content="ls" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">ls</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="/posts/nginx-subdomain-reverse-proxy/">Nginx で reverse proxy。 proxy_pass にハマる。</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-07-19
+        </span>
+
+        
+          
+        
+      
+
+      
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/docker/">docker</a>&nbsp;
+        
+          #<a href="/tags/nginx/">nginx</a>&nbsp;
+        
+          #<a href="/tags/reverse-proxy/">reverse proxy</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <h2 id="やりたいこと">やりたいこと</h2>
+<ul>
+<li>サブドメインと同じホスト名を持つコンテナに中継するリバースプロキシを Docker コンテナで作る。</li>
+<li>中継先は、同じ Docker Network 内とする。</li>
+</ul>
+<h2 id="当初は">当初は</h2>
+<ul>
+<li><a href="https://caddyserver.com/">Caddy</a> でやろうと思ったのだが、自分の力では出来そうもなく断念。</li>
+</ul>
+<h2 id="nginx-で出来た">Nginx で出来た</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt;EOF &gt; spades.html
+</span><span style="color:#e6db74">&lt;!doctype html&gt;
+</span><span style="color:#e6db74">&lt;html&gt;
+</span><span style="color:#e6db74">&lt;body&gt;
+</span><span style="color:#e6db74">&lt;h1&gt;&amp;spades;&lt;/h1&gt;
+</span><span style="color:#e6db74">&lt;/body&gt;
+</span><span style="color:#e6db74">&lt;/html&gt;
+</span><span style="color:#e6db74">EOF</span>
+
+cat <span style="color:#e6db74">&lt;&lt;EOF &gt; diams.html
+</span><span style="color:#e6db74">&lt;!doctype html&gt;
+</span><span style="color:#e6db74">&lt;html&gt;
+</span><span style="color:#e6db74">&lt;body&gt;
+</span><span style="color:#e6db74">&lt;h1&gt;&amp;diams;&lt;/h1&gt;
+</span><span style="color:#e6db74">&lt;/body&gt;
+</span><span style="color:#e6db74">&lt;/html&gt;
+</span><span style="color:#e6db74">EOF</span>
+
+cat <span style="color:#e6db74">&lt;&lt;EOF &gt; nginx.conf
+</span><span style="color:#e6db74">events {
+</span><span style="color:#e6db74">  worker_connections 1024;
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">http {
+</span><span style="color:#e6db74">  server {
+</span><span style="color:#e6db74">    listen 80;
+</span><span style="color:#e6db74">    server_name &#34;~^(?&lt;subdomain&gt;.+)\.localhost&#34;;
+</span><span style="color:#e6db74">    location / {
+</span><span style="color:#e6db74">      resolver 127.0.0.11 valid=5s;
+</span><span style="color:#e6db74">      proxy_pass http://\$subdomain/;
+</span><span style="color:#e6db74">      proxy_redirect off;
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">  }
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">EOF</span>
+
+cat <span style="color:#e6db74">&lt;&lt;EOF &gt; docker-compose.yaml
+</span><span style="color:#e6db74">version: &#34;3&#34;
+</span><span style="color:#e6db74">services:
+</span><span style="color:#e6db74">  spades:
+</span><span style="color:#e6db74">    image: nginx:1.19-alpine
+</span><span style="color:#e6db74">    volumes:
+</span><span style="color:#e6db74">      - ./spades.html:/usr/share/nginx/html/index.html
+</span><span style="color:#e6db74">  diams:
+</span><span style="color:#e6db74">    image: nginx:1.19-alpine
+</span><span style="color:#e6db74">    volumes:
+</span><span style="color:#e6db74">      - ./diams.html:/usr/share/nginx/html/index.html
+</span><span style="color:#e6db74">  reverse-proxy:
+</span><span style="color:#e6db74">    image: nginx:1.19-alpine
+</span><span style="color:#e6db74">    volumes:
+</span><span style="color:#e6db74">      - ./nginx.conf:/etc/nginx/nginx.conf
+</span><span style="color:#e6db74">    ports:
+</span><span style="color:#e6db74">      - 8080:80
+</span><span style="color:#e6db74">EOF</span>
+
+</code></pre></div><ul>
+<li>※ <code>\$subdomain</code> の <code>\</code> は bash のエスケープ</li>
+</ul>
+<h2 id="ローカルで試す">ローカルで試す</h2>
+<ul>
+<li>hosts ファイルに追記</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/hosts
+</code></pre></div><ul>
+<li>hosts ファイルに追記する内容は下記の通り。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">127.0.0.1  spades.localhost
+127.0.0.1  diams.localhost
+</code></pre></div><ul>
+<li>いざ</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
+curl http://spades.localhost:8080
+curl http://diams.localhost:8080
+</code></pre></div><h2 id="ハマったのは">ハマったのは</h2>
+<ul>
+<li>nginx.conf 内の下記の部分。</li>
+<li><a href="https://www.subthread.co.jp/blog/20190424/">nginx の proxy_pass の闇：株式会社サブスレッド</a> を参考にさせていただきました。
+<ul>
+<li>
+<blockquote>
+<p>nginx は起動時に名前解決した時の IP で転送処理を続けてしまいます。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>そこで、resolver ディレクティブの valid オプションを使って、TTLのキャッシュ時間を短くしてみました。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Docker 内蔵 DNS サーバは、 <code>127.0.0.11</code> らしいのでそれをセット。
+<ul>
+<li><a href="https://docs.docker.jp/engine/userguide/networking/dockernetworks.html#docker-dns">Docker コンテナ・ネットワークの理解 — Docker-docs-ja 17.06 ドキュメント</a> を参考にさせていただきました。</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">resolver 127.0.0.11 valid=5s;
+proxy_pass http://$subdomain/;
+</code></pre></div>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="/posts/deploy-databases/">
+                  <span class="button__text">データベースをデプロイする</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+
+    
+      
+        
+
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">ls</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

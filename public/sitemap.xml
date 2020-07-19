@@ -3,32 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2020-07-19T13:58:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-07-19T13:58:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/nginx/</loc>
+    <lastmod>2020-07-19T13:58:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/nginx-subdomain-reverse-proxy/</loc>
+    <lastmod>2020-07-19T13:58:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-07-19T13:58:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/reverse-proxy/</loc>
+    <lastmod>2020-07-19T13:58:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-07-19T13:58:42+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/database/</loc>
     <lastmod>2020-06-13T10:19:16+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/docker/</loc>
-    <lastmod>2020-06-13T10:19:16+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/kubernetes/</loc>
-    <lastmod>2020-06-13T10:19:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-06-13T10:19:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2020-06-13T10:19:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-06-13T10:19:16+09:00</lastmod>
   </url>
   

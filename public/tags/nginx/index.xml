@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker on ls</title>
-    <link>/tags/docker/</link>
-    <description>Recent content in docker on ls</description>
+    <title>nginx on ls</title>
+    <link>/tags/nginx/</link>
+    <description>Recent content in nginx on ls</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Jul 2020 13:58:42 +0900</lastBuildDate>
     
-	<atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>/posts/nginx-subdomain-reverse-proxy/</guid>
       <description>やりたいこと  サブドメインと同じホスト名を持つコンテナに中継するリバースプロキシを Docker コンテナで作る。 中継先は、同じ Docker Network 内とする。  当初は  Caddy でやろうと思ったのだが、自分の力では出来そうもなく断念。  Nginx で出来た cat &amp;lt;&amp;lt;EOF &amp;gt; spades.html &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;&amp;amp;spades;&amp;lt;/h1&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; EOF cat &amp;lt;&amp;lt;EOF &amp;gt; diams.html &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;&amp;amp;diams;&amp;lt;/h1&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; EOF cat &amp;lt;&amp;lt;EOF &amp;gt; nginx.conf events { worker_connections 1024; } http { server { listen 80; server_name &amp;#34;~^(?&amp;lt;subdomain&amp;gt;.+)\.localhost&amp;#34;; location / { resolver 127.0.0.11 valid=5s; proxy_pass http://\$subdomain/; proxy_redirect off; } } } EOF cat &amp;lt;&amp;lt;EOF &amp;gt; docker-compose.</description>
-    </item>
-    
-    <item>
-      <title>データベースをデプロイする</title>
-      <link>/posts/deploy-databases/</link>
-      <pubDate>Sat, 13 Jun 2020 10:19:16 +0900</pubDate>
-      
-      <guid>/posts/deploy-databases/</guid>
-      <description>PostgreSQL Docker  https://hub.docker.com/_/postgres  docker run -d --rm --name pg -e POSTGRES_PASSWORD=password postgres:12.3 docker exec -it pg psql -U postgres Docker Compose version: &amp;#39;3.1&amp;#39; services: db: image: postgres:12.3 restart: always ports: - &amp;#34;5432:5432&amp;#34; environment: POSTGRES_PASSWORD: password PGDATA: /var/lib/postgresql/data/pgdata volumes: - pg-data:/var/lib/postgresql/data adminer: image: adminer restart: always ports: - 8080:8080 volumes: pg-data: docker-compose up -d open http://localhost:8080 # # データベースの種類: PostgreSQL # サーバ: db # ユーザ名: postgres # パスワード: password # データベース: # docker-compose down Kubernetes (with kind) </description>
     </item>
     
   </channel>
