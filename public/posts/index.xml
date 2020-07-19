@@ -6,24 +6,21 @@
     <description>Recent content in Posts on ls</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-<<<<<<< HEAD
     <lastBuildDate>Sun, 19 Jul 2020 13:58:42 +0900</lastBuildDate>
-=======
-    <lastBuildDate>Sat, 11 Jul 2020 10:34:27 +0900</lastBuildDate>
->>>>>>> origin/master
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-<<<<<<< HEAD
       <title>Nginx で reverse proxy。 proxy_pass にハマる。</title>
       <link>/posts/nginx-subdomain-reverse-proxy/</link>
       <pubDate>Sun, 19 Jul 2020 13:58:42 +0900</pubDate>
       
       <guid>/posts/nginx-subdomain-reverse-proxy/</guid>
       <description>やりたいこと  サブドメインと同じホスト名を持つコンテナに中継するリバースプロキシを Docker コンテナで作る。 中継先は、同じ Docker Network 内とする。  当初は  Caddy でやろうと思ったのだが、自分の力では出来そうもなく断念。  Nginx で出来た cat &amp;lt;&amp;lt;EOF &amp;gt; spades.html &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;&amp;amp;spades;&amp;lt;/h1&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; EOF cat &amp;lt;&amp;lt;EOF &amp;gt; diams.html &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;&amp;amp;diams;&amp;lt;/h1&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; EOF cat &amp;lt;&amp;lt;EOF &amp;gt; nginx.conf events { worker_connections 1024; } http { server { listen 80; server_name &amp;#34;~^(?&amp;lt;subdomain&amp;gt;.+)\.localhost&amp;#34;; location / { resolver 127.0.0.11 valid=5s; proxy_pass http://\$subdomain/; proxy_redirect off; } } } EOF cat &amp;lt;&amp;lt;EOF &amp;gt; docker-compose.</description>
-=======
+    </item>
+    
+    <item>
       <title>JavaScript で中心点と半径から多角形の頂点を算出する</title>
       <link>/posts/calculate-polygon-with-js/</link>
       <pubDate>Sat, 11 Jul 2020 10:34:27 +0900</pubDate>
@@ -39,7 +36,6 @@
       
       <guid>/posts/linechart-libraries/</guid>
       <description>C3.js と Billboard.js  下記は Billboard.js を利用した。C3.js も可能。  &amp;lt;body&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script src=&amp;#34;https://d3js.org/d3.v5.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/billboard.js/2.0.0-next.7/billboard.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/billboard.js/2.0.0-next.7/billboard.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;timeseries&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var chart = bb.generate({ data: { x: &amp;#39;x&amp;#39;, xFormat: &amp;#39;%Y-%m-%dT%H:%M:%S.%LZ&amp;#39;, // columns: [  // [  // &amp;#39;x&amp;#39;,  // &amp;#39;2013-01-01T00:00:00.000Z&amp;#39;,  // &amp;#39;2013-01-01T02:02:00.000Z&amp;#39;,  // &amp;#39;2013-01-01T04:04:00.000Z&amp;#39;,  // &amp;#39;2013-01-01T08:08:00.000Z&amp;#39;,  // &amp;#39;2013-01-01T16:16:00.000Z&amp;#39;  // ],  // [&amp;#39;data1&amp;#39;, 30, 200, 100, 400, 150],  // [&amp;#39;data2&amp;#39;, 130, 340, 200, 500, 250]  // ]  rows: [ [&amp;#34;x&amp;#34;, &amp;#34;data1&amp;#34;, &amp;#34;data2&amp;#34;], [&amp;#34;2013-01-01T00:00:00.</description>
->>>>>>> origin/master
     </item>
     
     <item>
