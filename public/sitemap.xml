@@ -3,12 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+<<<<<<< HEAD
     <loc>/tags/docker/</loc>
     <lastmod>2020-07-19T13:58:42+09:00</lastmod>
+=======
+    <loc>/posts/calculate-polygon-with-js/</loc>
+    <lastmod>2020-07-11T10:34:27+09:00</lastmod>
+>>>>>>> origin/master
   </url>
   
   <url>
     <loc>/</loc>
+<<<<<<< HEAD
     <lastmod>2020-07-19T13:58:42+09:00</lastmod>
   </url>
   
@@ -43,6 +49,47 @@
   </url>
   
   <url>
+=======
+    <lastmod>2020-07-11T10:34:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-07-11T10:34:27+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/chart/</loc>
+    <lastmod>2020-07-03T00:36:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/javascript/</loc>
+    <lastmod>2020-07-03T00:36:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/linechart-libraries/</loc>
+    <lastmod>2020-07-03T00:36:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-07-03T00:36:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/database/</loc>
+    <lastmod>2020-06-13T10:19:16+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2020-06-13T10:19:16+09:00</lastmod>
+  </url>
+  
+  <url>
+>>>>>>> origin/master
     <loc>/tags/kubernetes/</loc>
     <lastmod>2020-06-13T10:19:16+09:00</lastmod>
   </url>
